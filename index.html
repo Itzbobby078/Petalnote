@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8eef1">
+<title>Petalnote ♡ Little letters. Lasting feelings.</title>
+<style>
+:root {
+  --bg: #f8eef1;
+  --paper: #fffaf7;
+  --pink: #bd8298;
+  --rose: #e9cbd5;
+  --ink: #493943;
+  --muted: #987f8c;
+  --sage: #a5b19b;
+  --line: #ead9df;
+  --shadow: 0 15px 50px #80596b18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 10% 5%, #eedbe5 0, transparent 35%),
+    radial-gradient(ellipse at 95% 85%, #e4e9dc 0, transparent 32%),
+    var(--bg);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px clamp(18px, 5vw, 65px);
+}
+
+.brand {
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--pink);
+}
+
+.top-caption {
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.wrap {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.screen {
+  display: none;
+  animation: fadeUp .45s ease both;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  color: var(--pink);
+  font: 10px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, p {
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  margin: 22px 0;
+  font-size: clamp(54px, 10vw, 100px);
+  font-weight: normal;
+  line-height: .96;
+  letter-spacing: -4px;
+}
+
+h1 em {
+  color: var(--pink);
+  font-weight: normal;
+}
+
+h2 {
+  margin: 16px 0;
+  font-size: clamp(37px, 7vw, 65px);
+  font-weight: normal;
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.sub {
+  max-width: 470px;
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.flowerline {
+  margin: 22px 0;
+  color: var(--pink);
+  font-size: 25px;
+  letter-spacing: 8px;
+}
+
+.hero {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 0 50px;
+  text-align: center;
+}
+
+.hero-card {
+  width: min(670px, 100%);
+  padding: clamp(35px, 8vw, 75px) 24px;
+  background: #fffaf7e8;
+  border: 1px solid white;
+  border-radius: 46% 46% 25px 25px / 19% 19% 25px 25px;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 47px;
+  padding: 13px 23px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  background: var(--ink);
+  color: white;
+  font-size: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px #49394320;
+}
+
+.btn.primary {
+  background: var(--pink);
+  color: white;
+}
+
+.btn.soft {
+  background: #f2e3e9;
+  color: var(--ink);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.pagehead {
+  padding: 38px 0 18px;
+  text-align: center;
+}
+
+.pagehead .sub {
+  margin-bottom: 10px;
+}
+
+.progress {
+  height: 3px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--line);
+}
+
+.progress div {
+  height: 100%;
+  width: 0;
+  background: var(--pink);
+  transition: width .3s;
+}
+
+.paper {
+  position: relative;
+  max-width: 760px;
+  margin: 20px auto;
+  padding: clamp(24px, 5vw, 45px);
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid white;
+  border-radius: 23px;
+  box-shadow: var(--shadow);
+}
+
+.paper::before {
+  position: absolute;
+  content: "";
+  inset: 11px;
+  border: 1px solid #f0e3e7;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.paper > * {
+  position: relative;
+}
+
+.letter-lines {
+  min-height: 150px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.navrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 27px 0;
+}
+
+.navrow .btn {
+  padding: 11px 16px;
+}
+
+.small-muted {
+  color: var(--muted);
+  font: 11px/1.8 Arial, sans-serif;
+}
+
+.dandelion-art {
+  position: relative;
+  display: grid;
+  min-height: 235px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #f0e4ec, #f6f2e9);
+}
+
+.dandelion-orb {
+  font-size: 115px;
+  filter: drop-shadow(0 10px 14px #9d819a30);
+  animation: floatFlower 4s ease-in-out infinite;
+}
+
+@keyframes floatFlower {
+  50% {
+    transform: translateY(-9px) rotate(5deg);
+  }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.photo {
+  display: grid;
+  aspect-ratio: 4 / 5;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f1e5e9;
+  color: var(--muted);
+  text-align: center;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.song-card {
+  padding: 30px 20px;
+  border-radius: 19px;
+  background: linear-gradient(140deg, #f3e1e9, #f3eee6);
+  text-align: center;
+}
+
+.vinyl {
+  display: grid;
+  width: 155px;
+  height: 155px;
+  margin: 5px auto 22px;
+  place-items: center;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle, #493943 0 2px, #302630 3px 5px
+  );
+  box-shadow: 0 10px 28px #49394325;
+  animation: spinVinyl 12s linear infinite;
+}
+
+.vinyl span {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--rose);
+  font-size: 23px;
+}
+
+@keyframes spinVinyl {
+  to { transform: rotate(360deg); }
+}
+
+.note-card {
+  min-height: 150px;
+  padding: 30px 18px;
+  border-radius: 17px;
+  background: #f2eadf;
+  text-align: center;
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.tulip-art {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 110px;
+}
+
+.actionrow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+  margin: 25px 0;
+}
+
+.editor {
+  max-width: 760px;
+  margin: 20px auto;
+}
+
+.field {
+  margin: 19px 0;
+}
+
+.field label,
+.field-label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font: 10px Arial, sans-serif;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffdfb;
+  color: var(--ink);
+  font: 14px/1.7 Arial, sans-serif;
+}
+
+.field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.filepick {
+  display: block;
+  padding: 17px;
+  border: 1px dashed #cbaab8;
+  border-radius: 13px;
+  background: #fff8fa;
+  color: var(--muted);
+  text-align: center;
+}
+
+.filepick input {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.preview-mini {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.preview-mini img {
+  width: 65px;
+  height: 65px;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.share-tip {
+  padding: 15px;
+  border-radius: 12px;
+  background: #f4e7ec;
+  color: #765766;
+  font: 13px/1.8 Arial, sans-serif;
+}
+
+.divider {
+  height: 1px;
+  margin: 24px 0;
+  background: var(--line);
+}
+
+.footer {
+  padding: 28px 10px;
+  color: var(--muted);
+  text-align: center;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.toast {
+  position: fixed;
+  z-index: 99;
+  bottom: 20px;
+  left: 50%;
+  display: none;
+  width: max-content;
+  max-width: 90%;
+  padding: 12px 18px;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  background: var(--ink);
+  color: white;
+  text-align: center;
+  font: 13px Arial, sans-serif;
+  box-shadow: var(--shadow);
+}
+
+.toast.show {
+  display: block;
+  animation: fadeUp .2s ease;
+}
+
+@media (min-width: 650px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    padding: 16px 4%;
+  }
+
+  .top-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .hero-card {
+    border-radius: 40% 40% 22px 22px / 15% 15% 22px 22px;
+  }
+
+  .two {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .navrow .btn {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .paper {
+    padding: 23px 18px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">petalnote<span>♡</span></div>
+  <div class="top-caption">little letters · lasting feelings</div>
+</header>
+
+<main class="wrap">
+
+<!-- WELCOME PAGE -->
+<section class="screen active" id="welcome">
+  <div class="hero">
+    <div class="hero-card">
+      <div class="eyebrow">a little something, just for you</div>
+      <div class="flowerline">❀ ୨ৎ ❀</div>
+
+      <h1>Open a<br><em>letter.</em></h1>
+
+      <p class="sub">
+        A tiny world made of words, memories, music
+        and all the things that are hard to say out loud.
+      </p>
+
+      <button class="btn primary" onclick="go(1)">
+        Open a letter <span>↗</span>
+      </button>
+
+      <p class="small-muted" style="margin-top:24px">
+        made with a little love, kept forever ♡
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 1: LETTER -->
+<section class="screen" id="p1">
+  <div class="progress"><div></div></div>
+
+  <div class="pagehead">
+    <div class="eyebrow">01 · the letter</div>
+    <h2>Words from the heart</h2>
+    <p class="sub">
+      Some feelings deserve a little more space.
+    </p>
+  </div>
+
+  <div class="paper">
+    <div class="eyebrow">dear you,</div>
+
+    <div class="letter-lines" id="viewLetter">I wanted to make something small that could hold a very big feeling.
+
+So here's a little letter, just for you.
+
+I hope you remember how special you are, even on the days you forget. ♡</div>
+
+    <div id="viewSignature"
+         style="text-align:right;margin-top:25px;font-style:italic">
+      with love, always ♡
+    </div>
+  </div>
+
+  <div class="navrow">
+    <button class="btn soft" onclick="go(0)">← Back</button>
+    <span class="small-muted">page 01 of 06</span>
+    <button class="btn" onclick="go(2)">Next →</button>
+  </div>
+</section>
+
+<!-- PAGE 2: DANDELION -->
+<section class="screen" id="p2">
+  <div class="progress"><div></div></div>
+
+  <div class="pagehead">
+    <div class="eyebrow">02 · make a wish</div>
+    <h2>Like a dandelion</h2>
+
+    <p class="sub">
+      Close your eyes, make a wish, and let the little
+      things find their way to you.
+    </p>
+  </div>
+
+  <div class="paper">
+    <div class="dandelion-art">
+      <div class="dandelion-orb">❋</div>
+    </div>
+
+    <p style="text-align:center;font-size:17px;line-height:1.9;margin:28px 5px 12px">
+      May your quiet wishes find you.
+
+      May the world be softer with you.
+
+      May you always have a reason to smile. ♡
+    </p>
+
+    <div class="flowerline" style="text-align:center">
+      · · · ♡ · · ·
+    </div>
+  </div>
+
+  <div class="navrow">
+    <button class="btn soft" onclick="go(1)">← Back</button>
+    <span class="small-muted">page 02 of 06</span>
+    <button class="btn" onclick="go(3)">Next →</button>
+  </div>
+</section>
+  <!-- PAGE 3: PHOTOS -->
+<section class="screen" id="p3">
+  <div class="progress"><div></div></div>
+
+  <div class="pagehead">
+    <div class="eyebrow">03 · little memories</div>
+    <h2>Moments to keep</h2>
+    <p class="sub">
+      The blurry, silly, beautiful little moments
+      that mean everything.
+    </p>
+  </div>
+
+  <div class="paper">
+    <div class="photo-grid" id="viewPhotos">
+      <div class="photo">
+        <div>
+          <div style="font-size:35px">♡</div>
+          <p class="small-muted">a memory goes here</p>
+        </div>
+      </div>
+
+      <div class="photo">
+        <div>
+          <div style="font-size:35px">✿</div>
+          <p class="small-muted">your favourite moment</p>
+        </div>
+      </div>
+
+      <div class="photo">
+        <div>
+          <div style="font-size:35px">☁</div>
+          <p class="small-muted">one to remember</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="small-muted"
+       style="text-align:center;margin-top:28px">
+      some moments become memories before we even notice ♡
+    </p>
+  </div>
+
+  <div class="navrow">
+    <button class="btn soft" onclick="go(2)">← Back</button>
+    <span class="small-muted">page 03 of 06</span>
+    <button class="btn" onclick="go(4)">Next →</button>
+  </div>
+</section>
+
+<!-- PAGE 4: SONG -->
+<section class="screen" id="p4">
+  <div class="progress"><div></div></div>
+
+  <div class="pagehead">
+    <div class="eyebrow">04 · our little soundtrack</div>
+    <h2>A song for you</h2>
+    <p class="sub">
+      Every memory seems to have a song hiding inside it.
+    </p>
+  </div>
+
+  <div class="paper">
+    <div class="song-card">
+      <div class="vinyl">
+        <span>♡</span>
+      </div>
+
+      <div class="eyebrow">press play & stay awhile</div>
+
+      <h3 id="viewSongTitle">
+        A song that feels like you
+      </h3>
+
+      <p class="small-muted" id="viewSongArtist">
+        your song · your memory
+      </p>
+
+      <audio
+        id="songPlayer"
+        controls
+        preload="metadata"
+        style="display:none;width:100%;margin-top:20px">
+      </audio>
+
+      <a
+        id="songLink"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="display:none;color:var(--pink);font:13px Arial,sans-serif">
+        Open song ↗
+      </a>
+    </div>
+
+    <p class="small-muted"
+       style="text-align:center;margin-top:24px">
+      a song can say what words sometimes can't ♡
+    </p>
+  </div>
+
+  <div class="navrow">
+    <button class="btn soft" onclick="go(3)">← Back</button>
+    <span class="small-muted">page 04 of 06</span>
+    <button class="btn" onclick="go(5)">Next →</button>
+  </div>
+</section>
+
+  <!-- PAGE 5: NOTE -->
+<section class="screen" id="p5">
+  <div class="progress"><div></div></div>
+
+  <div class="pagehead">
+    <div class="eyebrow">05 · a tiny reminder</div>
+    <h2>A note to keep</h2>
+    <p class="sub">
+      For a day when you need a little reminder.
+    </p>
+  </div>
+
+  <div class="paper">
+    <div class="note-card" id="viewNote">In case nobody told you today:
+
+you make this world a little more lovely. ♡</div>
+
+    <div class="flowerline" style="text-align:center">
+      ୨ৎ
+    </div>
+
+    <p class="small-muted" style="text-align:center">
+      save these words somewhere in your heart
+    </p>
+  </div>
+
+  <div class="navrow">
+    <button class="btn soft" onclick="go(4)">← Back</button>
+    <span class="small-muted">page 05 of 06</span>
+    <button class="btn" onclick="go(6)">Next →</button>
+  </div>
+</section>
+
+<!-- PAGE 6: TULIP -->
+<section class="screen" id="p6">
+  <div class="progress"><div></div></div>
+
+  <div class="pagehead">
+    <div class="eyebrow">06 · until next time</div>
+    <h2>One last tulip</h2>
+    <p class="sub">
+      A little flower, for a person who makes
+      ordinary days feel like spring.
+    </p>
+  </div>
+
+  <div class="paper" style="text-align:center">
+    <div class="tulip-art">🌷</div>
+
+    <p id="viewTulip"
+       style="font-size:18px;line-height:1.9;max-width:470px;margin:20px auto">
+      If I could give you one thing, it would be
+      the ability to see yourself the way the
+      people who love you see you. ♡
+    </p>
+
+    <div class="flowerline">❀ ♡ ❀</div>
+
+    <p class="small-muted">
+      that's the end of this little story
+    </p>
+
+    <p style="font-size:16px;font-style:italic">
+      but you can make one of your own.
+    </p>
+  </div>
+
+  <div class="actionrow">
+    <button class="btn primary" onclick="go(7)">
+      Make yourself ♡
+    </button>
+  </div>
+
+  <div class="navrow">
+    <button class="btn soft" onclick="go(5)">← Back</button>
+    <span class="small-muted">the final page</span>
+    <button class="btn" onclick="go(7)">Create yours →</button>
+  </div>
+</section>
+
+  
+      <!-- MAKE YOURSELF -->
+      <section class="page" id="p7">
+        <div class="eyebrow">YOUR LITTLE CORNER ♡</div>
+        <h1>Make it yours.</h1>
+        <p class="subtitle">Create a little gift filled with your own words, memories, and love.</p>
+
+        <div class="card">
+          <label for="giftTitle">A little title</label>
+          <input id="giftTitle" type="text" placeholder="For someone special…" maxlength="70">
+
+          <label for="giftName">Their name</label>
+          <input id="giftName" type="text" placeholder="Dear someone…" maxlength="60">
+
+          <label for="giftLetter">Your letter</label>
+          <textarea id="giftLetter" rows="5" placeholder="Write everything your heart wants to say…"></textarea>
+
+          <label for="giftNote">A tiny note</label>
+          <textarea id="giftNote" rows="3" placeholder="A little reminder for them…"></textarea>
+
+          <label for="giftMessage">Your final message</label>
+          <textarea id="giftMessage" rows="3" placeholder="If I could give you one thing…"></textarea>
+
+          <label for="giftSong">Song link (optional)</label>
+          <input id="giftSong" type="url" placeholder="https://open.spotify.com/…">
+
+          <label for="giftPhotos">Choose your memories</label>
+          <input id="giftPhotos" type="file" accept="image/*" multiple>
+          <p class="tiny">Choose photos from your device. They’ll be included in your gift.</p>
+
+          <button class="btn primary" onclick="previewGift()">Preview my gift ♡</button>
+        </div>
+
+        <div class="card preview-card" id="giftPreview" hidden>
+          <div class="eyebrow">A LITTLE PREVIEW</div>
+          <h2 id="previewTitle">For someone special…</h2>
+          <p id="previewName">Dear someone…</p>
+          <div class="preview-letter" id="previewLetter"></div>
+          <div class="photo-grid" id="previewPhotos"></div>
+          <p id="previewNote"></p>
+          <a id="previewSong" target="_blank" rel="noopener noreferrer" hidden>Listen to our song ♫</a>
+          <p id="previewMessage"></p>
+          <button class="btn primary" onclick="saveGift()">Save my gift ♡</button>
+          <button class="btn secondary" onclick="shareGift()">Share my gift ↗</button>
+        </div>
+
+        <div class="nav">
+          <button class="btn secondary" onclick="go(6)">← Back</button>
+          <button class="btn primary" onclick="previewGift()">Create my gift ♡</button>
+        </div>
+      </section>
+
+      <script>
+        const pageIds = [
+          "welcome", "p1", "p2", "p3",
+          "p4", "p5", "p6", "p7"
+        ];
+
+        function go(index) {
+          const target = Math.max(0, Math.min(index, pageIds.length - 1));
+
+          document.querySelectorAll(".page").forEach(page => {
+            page.classList.remove("active");
+          });
+
+          const nextPage = document.getElementById(pageIds[target]);
+          if (nextPage) {
+            nextPage.classList.add("active");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }
+
+        function getValue(id, fallback = "") {
+          const element = document.getElementById(id);
+          return element ? element.value.trim() || fallback : fallback;
+        }
+
+        function previewGift() {
+          const title = getValue("giftTitle", "For someone special…");
+          const name = getValue("giftName", "Dear someone…");
+          const letter = getValue("giftLetter", "Some feelings are too special for ordinary words.");
+          const note = getValue("giftNote", "You deserve little moments of happiness.");
+          const message = getValue("giftMessage", "I hope life gives you a thousand reasons to smile.");
+          const song = getValue("giftSong");
+
+          document.getElementById("previewTitle").textContent = title;
+          document.getElementById("previewName").textContent = name;
+          document.getElementById("previewLetter").textContent = letter;
+          document.getElementById("previewNote").textContent = note;
+          document.getElementById("previewMessage").textContent = message;
+
+          const songLink = document.getElementById("previewSong");
+          songLink.hidden = true;
+
+          try {
+            const parsed = new URL(song);
+            if (["https:", "http:"].includes(parsed.protocol)) {
+              songLink.href = parsed.href;
+              songLink.hidden = false;
+            }
+          } catch (_) {
+            // Keep the song link hidden if the URL is invalid.
+          }
+
+          const photoContainer = document.getElementById("previewPhotos");
+          photoContainer.replaceChildren();
+
+          const files = document.getElementById("giftPhotos").files;
+          Array.from(files).slice(0, 12).forEach(file => {
+            if (!file.type.startsWith("image/")) return;
+
+            const image = document.createElement("img");
+            image.alt = "A memory";
+            image.className = "memory-photo";
+
+            const reader = new FileReader();
+            reader.onload = () => {
+              image.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+
+            photoContainer.appendChild(image);
+          });
+
+          document.getElementById("giftPreview").hidden = false;
+          document.getElementById("giftPreview").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+
+        document.getElementById("giftPhotos").addEventListener("change", () => {
+          const files = document.getElementById("giftPhotos").files;
+          if (files.length > 12) {
+            alert("You can choose up to 12 photos for your gift.");
+          }
+        });
+      </script>
+
+        function escapeHTML(value) {
+          return String(value).replace(/[&<>"']/g, char => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+          })[char]);
+        }
+
+        async function buildGiftHTML() {
+          const title = getValue("giftTitle", "For someone special…");
+          const name = getValue("giftName", "Dear someone…");
+          const letter = getValue("giftLetter", "Some feelings are too special for ordinary words.");
+          const note = getValue("giftNote", "You deserve little moments of happiness.");
+          const message = getValue("giftMessage", "I hope life gives you a thousand reasons to smile.");
+          const song = getValue("giftSong");
+
+          let safeSong = "";
+          try {
+            const parsed = new URL(song);
+            if (["https:", "http:"].includes(parsed.protocol)) {
+              safeSong = parsed.href;
+            }
+          } catch (_) {}
+
+          const photos = [];
+          const files = Array.from(
+            document.getElementById("giftPhotos").files
+          ).slice(0, 12);
+
+          for (const file of files) {
+            if (!file.type.startsWith("image/")) continue;
+
+            const dataURL = await new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = () => resolve(reader.result);
+              reader.onerror = reject;
+              reader.readAsDataURL(file);
+            });
+
+            photos.push(dataURL);
+          }
+
+          const photoHTML = photos.map((src, index) =>
+            `<img src="${src}" alt="Memory ${index + 1}">`
+          ).join("");
+
+          const songHTML = safeSong
+            ? `<a href="${escapeHTML(safeSong)}" target="_blank" rel="noopener noreferrer">Listen to our song ♫</a>`
+            : "";
+
+          return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff5f4">
+<title>${escapeHTML(title)}</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;padding:24px 16px;background:#fff5f4;color:#604b50;font-family:Georgia,serif;line-height:1.8}
+main{max-width:680px;margin:35px auto;padding:28px 22px;background:#fffdfb;border:1px solid #f1dce0;border-radius:24px;box-shadow:0 12px 45px #b88b8b18}
+.eyebrow{text-align:center;letter-spacing:3px;font-size:11px;color:#b17b88}
+h1{text-align:center;font-size:clamp(28px,7vw,46px);font-weight:normal;color:#9a6876}
+h2{font-weight:normal;color:#a57582}
+p{white-space:pre-wrap}
+.letter{padding:20px;background:#fff7f7;border-radius:15px;white-space:pre-wrap}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:24px 0}
+.photos img{width:100%;height:190px;object-fit:cover;border-radius:12px}
+a{color:#a06478;overflow-wrap:anywhere}
+.tulip{text-align:center;font-size:56px;margin:15px}
+footer{text-align:center;font-size:12px;color:#b18d94;margin-top:35px}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">A LITTLE SOMETHING FOR YOU ♡</div>
+<h1>${escapeHTML(title)}</h1>
+<h2>${escapeHTML(name)}</h2>
+<div class="letter">${escapeHTML(letter)}</div>
+${photoHTML ? `<h2>Little memories</h2><div class="photos">${photoHTML}</div>` : ""}
+${songHTML ? `<h2>Our song</h2><p>${songHTML}</p>` : ""}
+<h2>A tiny note</h2>
+<p>${escapeHTML(note)}</p>
+<div class="tulip">🌷</div>
+<h2>One last thing…</h2>
+<p>${escapeHTML(message)}</p>
+<footer>Made with a little love ♡</footer>
+</main>
+</body>
+</html>`;
+        }
+
+        async function saveGift() {
+          try {
+            const html = await buildGiftHTML();
+            const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "petalnote-gift.html";
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 30000);
+          } catch (error) {
+            alert("Sorry, your gift couldn't be saved. Try choosing fewer or smaller photos.");
+            console.error(error);
+          }
+}
+
+        async function shareGift() {
+          try {
+            const html = await buildGiftHTML();
+            const blob = new Blob([html], {
+              type: "text/html;charset=utf-8"
+            });
+            const file = new File([blob], "petalnote-gift.html", {
+              type: "text/html"
+            });
+
+            if (
+              navigator.share &&
+              navigator.canShare &&
+              navigator.canShare({ files: [file] })
+            ) {
+              await navigator.share({
+                title: getValue("giftTitle", "A little gift ♡"),
+                text: "Someone made a little something for you ♡",
+                files: [file]
+              });
+            } else {
+              await saveGift();
+              alert(
+                "Your gift file has been saved! Send petalnote-gift.html to your special person."
+              );
+            }
+          } catch (error) {
+            if (error.name !== "AbortError") {
+              alert("Sharing wasn't available. Try saving your gift instead.");
+            }
+          }
+        }
+      </script>
+    </main>
+  </body>
+</html>
