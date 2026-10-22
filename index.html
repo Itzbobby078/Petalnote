@@ -122,7 +122,7 @@ function renderData(d){currentData=d;$('letterText').textContent=d.letter||'';$(
 // PETALNOTE ONLINE SHARING SETUP:
 // Create a Supabase project, run the SQL provided with this file, then replace these two values.
 // Use the Project URL and the publishable/anon key ONLY. Never put a service_role/secret key here.
-const SUPABASE_URL = 'PASTE_SUPABASE_PROJECT_URL_HERE';
+const SUPABASE_URL = 'https://bacxsyfmmvhkckwipgrp.supabase.co';
 const SUPABASE_ANON_KEY = 'PASTE_SUPABASE_PUBLISHABLE_OR_ANON_KEY_HERE';
 const SUPABASE_BUCKET = 'petalnote-media';
 function supabaseReady(){return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(SUPABASE_URL)&&!SUPABASE_URL.includes('PASTE_')&&!!SUPABASE_ANON_KEY&&!SUPABASE_ANON_KEY.includes('PASTE_')}
